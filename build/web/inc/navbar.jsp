@@ -1,4 +1,5 @@
 <%@taglib uri ="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page import ="ntbngoc.utils.API" %>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
             <div class="container-fluid">
@@ -31,7 +32,12 @@
                   <c:if test="${user!=null}">
                       <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Hi ${user.getName()}
+                          Hi
+                          <c:set var="s" value="${user.getName()}"></c:set>
+                          <%
+                              String name = (String)pageContext.getAttribute("s");
+                              out.print(API.getName(name));
+                          %>
                         </a>
                         <ul class="dropdown-menu">                          
                             <li><a class="dropdown-item" href="#">Profile</a></li> 
