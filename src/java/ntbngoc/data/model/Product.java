@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package ntbngoc.data.model;
-
+import java.sql.ResultSet;
+import java.sql.SQLException;
 /**
  *
  * @author Admin
@@ -25,6 +26,14 @@ public class Product {
         this.price = price;
         this.quantity = quantity;
         this.status = status;
+    }
+    public Product(ResultSet rs) throws SQLException {
+        this.id = rs.getInt("id");
+        this.name = rs.getString("name");
+        this.image = rs.getString("image");
+        this.price = rs.getDouble("price") ;
+        this.quantity = 1;
+        
     }
 
     public int getId() {

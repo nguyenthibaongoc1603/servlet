@@ -13,4 +13,5 @@ import ntbngoc.data.model.Product;
  */
 public interface ProductDao {
     public List<Product> findAll();
+    public Product findProduct(int id_product);
 }

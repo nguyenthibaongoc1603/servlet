@@ -47,4 +47,17 @@ public class ProductImpl implements ProductDao {
         }
         return listProduct;
     }
+    
+    @Override
+    public Product findProduct(int id_product){
+        String sql="select * from products where id=" +id_product;
+        try {
+            PreparedStatement sttm = con.prepareStatement(sql);
+            ResultSet rs = sttm.executeQuery();
+            if(rs.next()) return new Product(rs);
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
 }

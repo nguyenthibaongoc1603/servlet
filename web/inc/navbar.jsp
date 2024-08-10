@@ -12,7 +12,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin: 0 auto">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/home">Home</a>
+                    <a class="nav-link active" aria-current="page" href="home">Home</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -49,7 +49,7 @@
                   <li class="nav-item">
                       <a class="nav-link" href="#">
                           <img src="./assets/icon/cart.png" width="25" height="25"/>
-                          <i>0</i>
+                          <i>${cart.size()}</i>
                       </a>
                   </li>
                 </ul>
