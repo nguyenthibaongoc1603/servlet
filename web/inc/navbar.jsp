@@ -47,7 +47,7 @@
                   </c:if>
                   
                   <li class="nav-item">
-                      <a class="nav-link" href="#">
+                      <a class="nav-link" href="cart">
                           <img src="./assets/icon/cart.png" width="25" height="25"/>
                           <i>${cart.size()}</i>
                       </a>

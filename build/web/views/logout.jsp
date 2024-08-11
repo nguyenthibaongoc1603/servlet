@@ -1,4 +1,5 @@
 <%
-  request.getSession().removeAttribute("user");
+  request.getSession().invalidate();
+  
   response.sendRedirect(request.getContextPath() +"/home");
 %>

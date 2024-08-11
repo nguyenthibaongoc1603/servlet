@@ -32,7 +32,7 @@ public class HomeServlet extends HttpServlet {
         request.setAttribute("listCategory", listCategory);
         List<Product> listProduct = Database.getProductDao().findAll();
         request.setAttribute("listProduct", listProduct);
-        String id_category = request.getParameter("id_category");
+        String id_category =    request.getParameter("id_category");
         request.setAttribute("id_category",id_category);
         addProductToCart(request);
         request.setAttribute("title", "Home Page");
@@ -57,7 +57,7 @@ public class HomeServlet extends HttpServlet {
         if(id_product > 0){
             Product product = Database.getProductDao().findProduct(id_product);
             boolean isProductInCart=false;
-            for (Product pro: cart){
+            for (Product pro: cart)
                 if(pro.getId()==id_product){
                     pro.setQuantity(pro.getQuantity()+1);
                     isProductInCart = true;
@@ -65,7 +65,7 @@ public class HomeServlet extends HttpServlet {
             if(!isProductInCart)cart.add(product);
         }
         request.getSession().setAttribute("cart", cart);
-        }
     }
-    
 }
+    
+
